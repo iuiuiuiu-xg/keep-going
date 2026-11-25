@@ -1,0 +1,872 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E4E1D9;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1360px;
+    margin: 20px auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #EDEAE3;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* шапка */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+header,
+main,
+footer {
+    padding: 0 28px;
+}
+
+.logo {
+    font-family: "Anton", sans-serif;
+    font-size: 30px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navigation {
+    display: flex;
+    width: 428px;
+    height: 45px;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #DEDBD4;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-actions {
+    width: 195px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #DEDBD4;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* шапка майна */
+
+h1 {
+    font-family: "Anton", sans-serif;
+    font-size: 152px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#products-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.catalog-header {
+    display: flex;
+    gap: 12px;
+}
+
+/* категории */
+
+.catalog-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 36px 0;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+}
+
+.categories button {
+    padding: 9px 16px;
+    border: 1.5px #CFCBC2 solid;
+    border-radius: 18px;
+    background-color: #F7F5F0;
+}
+
+.categories button.active {
+    background-color: black;
+    color: #F7F5F0;
+}
+
+/* поиск */
+
+.search {
+    position: relative;
+}
+
+.search img {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+}
+
+.search input {
+    padding-left: 18px;
+    padding-right: 158px;
+    width: 260px;
+    height: 36px;
+    border-radius: 22px;
+    border: 1.5px black solid;
+    outline: none;
+    background-color: #F7F5F0;
+    padding: 12px 40px 12px 16px;
+}
+
+.search input::-webkit-search-cancel-button {
+    display: none;
+}
+
+/* карточки */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    margin-bottom: 60px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-family: "Anton", sans-serif;
+    font-size: 19px;
+}
+
+.product-card {
+    width: 100%;
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #DEDBD4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.new-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    z-index: 1;
+    font-size: 11px;
+    color: #111111;
+    background: #D4F33A;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.old-price {
+    text-decoration: line-through;
+}
+
+.product-prices {
+    display: flex;
+    font-size: 14px;
+    gap: 8px;
+}
+
+.product-image.out-of-stock img {
+    opacity: 0.35;
+}
+
+.stock-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.product-button img {
+    width: 16px;
+}
+
+.product-button {
+    background-color: #D4F33A;
+    padding: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.product-button.disabled {
+    background-color: #76736C;
+    cursor: not-allowed;
+}
+
+/* подвал */
+
+footer {
+    margin-top: 66px;
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #0E0E0E;
+    border-radius: 18px;
+    color: #EDEAE3;
+}
+
+.footer-nav-group {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-logo {
+    font-family: "Anton", sans-serif;
+    font-size: 22px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-giant-text {
+    justify-content: center;
+    font-family: "Anton", sans-serif;
+    font-size: 195px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #76736C;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom a, 
+.footer-bottom span {
+    color: #76736C;
+}
+
+.footer-links a,
+.footer-store a {
+    color: #EDEAE3;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* форма в подвале */
+
+.newsletter {
+    width: 400px;
+}
+
+.newsletter p {
+    font-family: "Anton", sans-serif;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+#newsletter-form {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #D4F52D;
+    border-radius: 40px;
+    padding: 5px;
+}
+
+#newsletter-email {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 18px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#newsletter-email::placeholder {
+    color: black;
+    opacity: 1;
+    text-transform: uppercase;
+}
+
+#newsletter-form img {
+    width: 16px;
+}
+
+#newsletter-form button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #111111;
+}
+
+#newsletter-email:focus {
+    background-color: transparent;
+    outline: none;
+}
+
+#newsletter-email:-webkit-autofill,
+#newsletter-email:-webkit-autofill:hover,
+#newsletter-email:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #D4F52D inset;
+    -webkit-text-fill-color: black;
+}
+
+#newsletter-message {
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Карточки-скелетоны */
+.skeleton .product-image {
+    background-color: #DEDBD4;
+    animation: loading 1.2s infinite alternate;
+}
+
+.skeleton .skeleton-name {
+    width: 70%;
+    height: 16px;
+    margin-top: 12px;
+    background-color: #DEDBD4;
+    border-radius: 4px;
+}
+
+.skeleton .skeleton-price {
+    width: 35%;
+    height: 14px;
+    margin-top: 8px;
+    background-color: #DEDBD4;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* соо ничего не найдено  */
+
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-size: 28px;
+    color: #0E0E0E;
+    padding: 60px 0;
+}
+
+/* АДАПТИВ */
+
+/* ПЛАНШЕТ — до 1200px */
+
+@media (max-width: 1200px) {
+
+    h1 {
+        font-size: 120px;
+    }
+
+    .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-bottom p {
+        font-size: 21vw;
+        line-height: 1;
+    }
+
+}
+
+/* ПЛАНШЕТ — до 900px*/
+
+@media (max-width: 900px) {
+
+    header {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .header-right {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navigation {
+        width: auto;
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    h1 {
+        font-size: 96px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    .newsletter {
+        width: 100%;
+    }
+
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ — до 600px */
+
+@media (max-width: 600px) {
+
+    /* ОСНОВНЫЕ НАСТРОЙКИ */
+
+    body {
+        background: #EDEAE3;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 390px;
+        margin: 0 auto;
+        border: 0;
+        border-radius: 0;
+        background: #EDEAE3;
+    }
+
+    header,
+    main,
+    footer {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+
+    /* ШАПКА */
+
+    header {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 8px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .logo {
+        order: 1;
+        margin-right: auto;
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    .header-right {
+        display: contents;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .header-actions {
+        display: flex;
+        order: 2;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+        height: 34px;
+        margin-left: auto;
+        padding: 0;
+        gap: 8px;
+        border-radius: 7px;
+        background: transparent;
+        font-size: 10px;
+    }
+
+    .header-actions > a:first-child {
+        display: none;
+    }
+
+    .cart-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: auto;
+    }
+
+    .cart-link img {
+        width: 15px;
+        height: 15px;
+        object-fit: contain;
+    }
+
+
+    /* ЗАГОЛОВОК КАТАЛОГА */
+
+    main {
+        padding-top: 2px;
+    }
+
+    h1 {
+        font-size: 38px;
+        line-height: 1;
+    }
+
+    .catalog-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 7px;
+    }
+
+    #products-count {
+        width: 19px;
+        height: 19px;
+        margin-top: 3px;
+        border-width: 1px;
+        font-size: 9px;
+    }
+
+
+    /* КАТЕГОРИИ И ПОИСК */
+
+    .catalog-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        margin: 7px 0 14px;
+    }
+
+    .categories {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 4px;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .categories button {
+        width: 100%;
+        min-height: 21px;
+        flex: none;
+        padding: 4px 9px;
+        border: 1px solid #CFCBC2;
+        border-radius: 14px;
+        background: #F7F5F0;
+        text-align: left;
+        font: 500 9px "Inter", sans-serif;
+    }
+
+    .categories button.active {
+        border-color: #111;
+        background: #111;
+        color: #F7F5F0;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search input {
+        width: 100%;
+        height: 22px;
+        padding: 4px 28px 4px 9px;
+        border: 1px solid #CFCBC2;
+        border-radius: 14px;
+        background: #F7F5F0;
+        font-size: 9px;
+    }
+
+    .search img {
+        right: 8px;
+        width: 11px;
+        height: 11px;
+    }
+
+
+    /* КАРТОЧКИ ТОВАРОВ */
+
+    .products {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .product-card {
+        min-width: 0;
+    }
+
+    .product-image {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 2px;
+        background: #DEDBD4;
+    }
+
+    .product-image img {
+        object-fit: contain;
+    }
+
+    .product-info {
+        display: flex;
+        min-height: 36px;
+        align-items: center;
+        gap: 8px;
+        margin: 7px 0 20px;
+    }
+
+    .product-details {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .product-name {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    .product-prices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .product-button {
+        display: grid;
+        flex-shrink: 0;
+        place-items: center;
+        width: 21px;
+        height: 21px;
+        min-width: 21px;
+        padding: 0;
+    }
+
+    .product-button img {
+        width: 9px;
+        height: 9px;
+    }
+
+    .new-label {
+        top: 5px;
+        left: 5px;
+        padding: 3px 6px;
+        font-size: 7px;
+    }
+
+    .stock-label {
+        font-size: 9px;
+    }
+
+    .empty-message {
+        padding: 30px 0;
+        font-size: 18px;
+    }
+
+
+    /* КНОПКА SHOW MORE */
+
+    .show-more {
+        display: block;
+        width: 100%;
+        min-height: 24px;
+        margin: 0 0 2px;
+        border: 1.5px solid #111;
+        border-radius: 24px;
+        background: transparent;
+        color: #111;
+        font: 700 8px "Inter", sans-serif;
+        cursor: pointer;
+    }
+
+    .show-more[hidden] {
+        display: none;
+    }
+
+    .show-more:disabled {
+        opacity: 0.55;
+        cursor: wait;
+    }
+
+
+    /* ПОДВАЛ */
+
+    footer {
+        margin-top: 20px;
+        padding: 20px 7px 12px;
+        border-radius: 10px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .footer-nav-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        order: 2;
+        gap: 12px;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 14px;
+    }
+
+    .footer-links a,
+    .footer-store a {
+        font-size: 8px;
+    }
+
+    .newsletter {
+        order: 1;
+        width: 100%;
+    }
+
+    .newsletter p {
+        margin-bottom: 7px;
+        font-size: 12px;
+    }
+
+    #newsletter-form {
+        height: 25px;
+        padding: 2px;
+    }
+
+    #newsletter-email {
+        padding: 0 8px;
+        font-size: 8px;
+    }
+
+    #newsletter-form button {
+        width: 20px;
+        height: 20px;
+    }
+
+    #newsletter-form img {
+        width: 9px;
+    }
+
+    #newsletter-message {
+        font-size: 9px;
+    }
+
+    .footer-giant-text {
+        margin-top: 15px;
+        overflow: hidden;
+        font-size: 14vw;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 7px 12px;
+        margin-top: 12px;
+        padding: 10px 0 0;
+        font-size: 7px;
+    }
+
+    .footer-bottom .copyright {
+        width: 100%;
+    }
+
+}
